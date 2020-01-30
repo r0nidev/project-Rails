@@ -1,0 +1,36 @@
+<div class="container">
+
+<h1>Libros</h1>
+<%= link_to "Nuevo Libro", new_libro_path %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Imagen</th>
+      <th>Autor</th>
+      <th>Descripción</th>
+      <th>Fecha de Publicación</th>
+      <th style="text-align: center"> Acciones </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @libros.each do |libro| %>
+      <tr>
+        <td><%= libro.id %></td>
+        <td><%= libro.titulo %></td>
+        
+        <% autor = libro.autor.blank?  ? "--Sin autor--" : libro.autor.nombre.to_s    %>
+        <td><%= autor %></td>
+        <td><%= libro.precio %></td>
+        <td><%= libro.fecha_publicacion %></td>
+        <td>
+          <%= link_to "Mostrar", libro %>
+          <%= link_to "Editar", edit_libro_path(libro) %>
+          <%= link_to "Eliminar", libro, method: :delete, data: { confirm: "¿Estás seguro de eliminar este libro?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

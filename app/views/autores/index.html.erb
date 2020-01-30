@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Autores#index</h1>
+  <%= link_to "New Author", new_autor_path %>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th style="text-align: center">Acciones</th>
+    </tr>
+    <tbody>
+      <% @autores.each do |a|%>
+      <tr>
+        <th><%= a.id %></th>
+        <td><%= a.nombre %></td>
+        <td><%= a.apellido_paterno %></td>
+        <td><%= a.apellido_materno %></td>
+        <td>
+          <%= link_to "Show" %>
+          <%= link_to "Edit", edit_autor_path(a) %>
+          <%= link_to "Delete"%>
+      </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

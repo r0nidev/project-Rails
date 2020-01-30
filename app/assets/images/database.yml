@@ -1,0 +1,48 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: alebrijes2 
+  username: alebrijes_user #alebrijes_user
+  password: alebrijes_pass #4l3br1j35_us3r
+
+test:
+  <<: *default
+  database: alebrijes_test
+  username: alebrijes_user
+  password: 4l3br1j35_us3r
+
+production:
+  <<: *default
+  database: alebrijes_production
+  username: alebrijes_user
+  password: 4l3br1j35_us3r
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ale_db
+  username: admin
+  password: admin
+
+test:
+  <<: *default
+  database: alebrijes_test
+  username: alebrijes_user
+  password: 4l3br1j35_us3r
+
+production:
+  <<: *default
+  database: alebrijes_production
+  username: alebrijes_user
+  password: 4l3br1j35_us3r

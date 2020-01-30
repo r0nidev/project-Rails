@@ -1,0 +1,19 @@
+<h1>Autores --new</h1>
+<%= form_for @autor do |f| %>
+  <div >
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div>
+    <%= f.label :apellido_paterno %>
+    <%= f.text_field :apellido_paterno %>
+  </div>
+  <div>
+    <%= f.label :apellido_materno %>
+    <%= f.text_field :apellido_materno %>
+  </div>
+
+  <div>
+    <%= f.submit "Save"  %>
+  </div>
+<% end %>
